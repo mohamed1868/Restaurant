@@ -1,0 +1,129 @@
+:root {
+  --colorBottom: #F49B33 ;
+  --colorText: #5E5E5E  ;
+  --backgroundBody: rgba(245, 245, 245, 1) ;
+  --backgroundContainer: rgba(255, 255, 255, 1)  ; 
+  --backgroundFooter : rgba(43, 43, 43, 1)  ;
+  --white : #ffff ;
+  --black : black ;
+ 
+ }
+ .dark{
+     --colorText: #d3d3d3  ;
+     --backgroundBody:  rgba(53, 53, 53, 1)  ;
+     --backgroundContainer:  rgba(43, 43, 43, 1)   ; 
+     --white : black ;
+     --black : #ffff ;
+ 
+ }
+
+
+.containerOneProductCard{
+  background-color: var(--backgroundContainer);
+  border-radius: 5px;
+  margin-top: 50px;
+
+  
+}
+.containerOneProductCard h3{
+  margin-top: 80PX;
+  font-size: 18px;
+  color: var(--colorText);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+ 
+}
+
+.containerNumProduct{
+    position: relative;
+    z-index: 1;
+    width: 140px;
+    margin-top: 80px;
+    text-align: center;
+    height: 30px;
+
+    }
+    .containerNumProduct::after{
+      content: '';
+      background-color: #F49B33;
+      opacity: 0.5;
+      position: absolute;
+      width:82% ;
+      height: 25px;
+      border-radius: 20px;
+
+
+      z-index: -1;
+      
+    
+    }
+    .containerNumProduct .oneNum {
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      background-color: #F49B33;
+      color: var(--colorText);
+
+
+      
+     
+    
+    }
+    .containerNumProduct h1{
+      font-size: 17px;
+      color: var(--colorText);
+      
+ 
+    }
+    .buttonDelete{
+      width: 125px !important;
+      margin-left: 100px;
+      height: 40px;
+      margin-top: 70px;
+      border-radius: 15px;
+      color: var(--colorText);
+      background-color: #F49B33;
+      border-color: transparent;
+    }
+    .masssageNotData{
+      color: var(--colorText);
+      text-align: center;
+      padding-top: 200px;
+      padding-bottom: 200px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     font-size: 25px;
+    }
+    .delateall{
+      color: var(--colorText);
+      background-color: #F49B33;
+      align-items: center;
+      border-radius: 10px;
+      border-color: transparent;
+      width: 140px;
+      height: 40px;
+      margin-top: 40px;
+    }
+ .containerTotalPrice{
+  width: 250px;
+  border: 1px solid var(--colorText);
+  text-align: center;
+  height: 110px;
+ }
+ .containerTotalPrice h1 ,.containerTotalPrice h2{
+  font-size: 20px;
+  color: var(--colorText);
+  
+ }
+.totalText{
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+ .containerTotalPrice button{
+  width: 100%;
+  color: var(--colorText);
+  background-color: #F49B33;
+  border-radius: 2px;
+  border-color: transparent;
+
+ }

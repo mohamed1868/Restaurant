@@ -1,0 +1,46 @@
+
+:root {
+ --colorBottom: #F49B33 ;
+ --colorText: #5E5E5E  ;
+ --backgroundBody: rgba(245, 245, 245, 1) ;
+ --backgroundContainer: rgba(255, 255, 255, 1)  ; 
+ --backgroundFooter : rgba(43, 43, 43, 1)  ;
+ --white : #ffff ;
+ --black : black ;
+
+}
+.dark{
+    --colorText: #d3d3d3  ;
+    --backgroundBody:  rgba(53, 53, 53, 1)  ;
+    --backgroundContainer:  rgba(43, 43, 43, 1)   ; 
+    --white : black ;
+    --black : #ffff ;
+
+}
+body{
+    background-color: var(--backgroundBody);
+}
+.swiper-button-prev, .swiper-button-next { 
+
+    color: var(--colorBottom) !important ;
+}
+a{
+    text-decoration: none;
+}
+.swiper-pagination-bullet{
+    background-color: var(--colorBottom) !important;
+    margin-left: 40px !important;
+}
+.swiper-wrapper{
+    width: 60% !important; 
+  }
+  button:disabled{
+    opacity: 0.4;
+  }
+  .swal2-confirm , .swal2-success-line-tip , .swal2-success-line-long{
+    background-color: var(--colorBottom) !important;
+  }
+  input:focus{
+    background-color: transparent !important;
+    box-shadow: none;
+  }

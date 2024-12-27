@@ -1,0 +1,125 @@
+:root {
+  --colorBottom: #F49B33 ;
+  --colorText: #5E5E5E  ;
+  --backgroundBody: rgba(245, 245, 245, 1) ;
+  --backgroundContainer: rgba(255, 255, 255, 1)  ; 
+  --backgroundFooter : rgba(43, 43, 43, 1)  ;
+  --white : #ffff ;
+  --black : black ;
+ 
+ }
+ .dark{
+     --colorText: #d3d3d3  ;
+     --backgroundBody:  rgba(53, 53, 53, 1)  ;
+     --backgroundContainer:  rgba(43, 43, 43, 1)   ; 
+     --white : black ;
+     --black : #ffff ;
+ 
+ }
+
+.swiper {
+    width: 250px;
+    height: 300px;
+  }
+ .SliderContainer{
+    width:60% !important       ;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+ 
+ }
+ .SliderContainer img{
+  width: 100%;
+  height: 280px;
+  border-radius: 25px;
+  cursor: pointer;
+  object-fit: cover;
+  object-position: center;
+
+  
+ }
+
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .gategoteContainer , .allProducts{
+    margin-top: 50px;
+    background-color: var(--backgroundContainer);
+    text-align: center;
+    border-radius: 50px;
+
+  }
+
+  .gategoteName{
+    margin-top: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .gategoteName img{
+    border-radius: 50%;
+  }
+  .gategoteName h3{
+    font-size: 20px;
+    padding-top: 10px;
+    color: var(--colorText);
+  }
+  
+  .h1Gategory{
+    border-bottom: 1.5px solid #F49B33;
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translate(-5px , -5px);
+    border-radius: 2px;
+    text-align: center;
+  }
+  .h1Gategory h1{
+    color: var(--colorBottom) !important;
+    font-size: 28px;
+    padding-top: 25px;
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: -2px;
+  }
+  .allProducts .h1Gategory{
+    padding-top: 20px;
+    
+  }
+  .productsContainer{
+    margin-top: 45px;
+  }
+  .productsContainer h3{
+    color: var(--colorText);
+    font-size: 22px ;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    
+  }
+  .productsContainer h4{
+    font-size: 16px;
+    padding-bottom: 5px;
+    opacity: 0.8;
+  }
+  .productsContainer div{
+    padding-top: 20px;
+  }
+  .productsContainer  img{
+    border-radius: 20px;
+  }

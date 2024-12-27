@@ -1,0 +1,53 @@
+:root {
+    --colorBottom: #F49B33 ;
+    --colorText: #5E5E5E  ;
+    --backgroundBody: rgba(245, 245, 245, 1) ;
+    --backgroundContainer: rgba(265, 265, 265, 1)  ; 
+    --backgroundFooter : rgba(43, 43, 43, 1)  ;
+    --white : #ffff ;
+    --black : black ;
+   
+   }
+   .dark{
+       --colorText: #d3d3d3  ;
+       --backgroundBody:  rgba(53, 53, 53, 1)  ;
+       --backgroundContainer:  rgba(43, 43, 43, 1)   ; 
+       --white : black ;
+       --black : #ffff ;
+   
+   }
+
+.Logoname{
+    color: var(--colorBottom) ;
+}
+
+ .NavColor{
+    background-color: var(--backgroundContainer) !important;
+
+}
+a , button , i{
+    color: var(--colorText) !important;
+}
+h1{
+    color: var(--black) !important;
+    margin-top: 5px;
+}
+.Icondark{
+    position: relative;
+    width: 20px;
+    margin-top: 8px;
+    padding-left: 4px;
+}
+@media(max-width :991px){
+    .Icondark{
+   
+        padding-bottom: 20px;
+   
+    }
+}
+.Icondark i{
+    position: absolute;
+}
+.sun{
+    visibility: hidden;
+}

@@ -1,0 +1,43 @@
+:root {
+    --colorBottom: #F49B33 ;
+    --colorText: #5E5E5E  ;
+    --backgroundBody: rgba(245, 245, 245, 1) ;
+    --backgroundContainer: rgba(255, 255, 255, 1)  ; 
+    --backgroundFooter : rgba(43, 43, 43, 1)  ;
+    --white : #ffff ;
+    --black : black ;
+   
+   }
+   .dark{
+       --colorText: #d3d3d3  ;
+       --backgroundBody:  rgba(53, 53, 53, 1)  ;
+       --backgroundContainer:  rgba(43, 43, 43, 1)   ; 
+       --white : black ;
+       --black : #ffff ;
+   
+   }
+.ContainerFooter{
+    background-color: var(--backgroundFooter);
+    text-align: center;
+    height: 100px;
+    margin-top: 60px;
+}
+.ContainerFooter h1{
+   color: var(--colorBottom) !important;
+   font-size: 20px;
+   padding-top: 5px;
+}
+.ContainerFooter i{
+    background-color: var(--colorBottom);
+    margin: 5px;
+    color: black !important;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding-top: 1.5px;
+}
+.ContainerFooter h4{
+    color: rgba(146, 152, 159, 1) ;
+    font-size: 10px;
+    margin-top: 10px;
+}

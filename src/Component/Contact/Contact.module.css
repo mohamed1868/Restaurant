@@ -1,0 +1,100 @@
+
+:root {
+    --colorBottom: #F49B33 ;
+    --colorText: #5E5E5E  ;
+    --backgroundBody: rgba(245, 245, 245, 1) ;
+    --backgroundContainer: rgba(255, 255, 255, 1)  ; 
+    --backgroundFooter : rgba(43, 43, 43, 1)  ;
+    --white : #ffff ;
+    --black : black ;
+   
+   }
+   .dark{
+       --colorText: #d3d3d3  ;
+       --backgroundBody:  rgba(53, 53, 53, 1)  ;
+       --backgroundContainer:  rgba(43, 43, 43, 1)   ; 
+       --white : black ;
+       --black : #ffff ;
+   
+   }
+   .ContainerFormContact{
+    margin-left: 150px;
+    margin-top: 40px;
+   }
+   .ContainerFormContact button{
+    background-color: var(--colorBottom);
+    color: var(--white) !important;
+    border-radius: 5px;
+    border-color: transparent;
+    height: 50px;
+   }
+.titleContact{
+    color: var(--colorBottom) !important;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+.containerContact{
+  background-color: var(--backgroundContainer);
+  padding-bottom: 20px;
+  padding-left: 20px;
+}
+.containerContact p{
+    color: var(--backgroundBody);
+    margin-left: 30px;
+    font-size: 15px;
+}
+.ContainerOne{
+    background-color: var(--colorBottom);
+    
+    margin-top: 20px;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+.ContainerOne h1{
+  margin-top: 50px;
+   color: var(--white) !important;
+   margin-left: 30px;
+   font-size: 30px;
+}
+.ContainerOne div:first-of-type{
+    margin-top: 100px;
+}
+.ContainerOne div:last-of-type{
+    padding-bottom: 125px;
+}
+.ContainerOne div {
+    margin-top: 40px;
+    color: var(--white) !important;
+    margin-left: 20px;
+}
+.ContainerOne div i{
+    color: var(--white) !important;
+
+}
+.ContainerOne h3{
+ font-size: 14px;
+
+}
+.divInputCotect{
+    display: flex;
+    flex-direction: column;
+}
+.divInputCotect input , .divInputCotect input:focus{
+    border-color: transparent transparent var(--colorText) transparent;
+    border-width: 1px;
+    background-color: transparent;
+    width: 230px;
+    color: var(--colorText);
+}
+.divInputCotect input::placeholder{
+    color: var(--colorText);
+}
+.divInputCotect label{
+    color: var(--colorText);
+}
+.lastInput{
+    width: 500px !important;
+}
