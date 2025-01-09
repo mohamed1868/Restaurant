@@ -13,20 +13,17 @@ const {containerNumProduct  ,oneNum ,buttonDelete ,containerOneProductCard ,two 
 
 
 export default function Basket() {
-
       let dataAllBasket = useSelector((state)=>state.card.items)
       let dispatch = useDispatch()
 
+   
+      function Provide(el){
 
-    function Provide(el){
         let button = document.querySelector(`#numProduct${el.id+el.price}`)
-      let currentNumber  = parseInt(button.textContent) 
-     
-         button.textContent =  currentNumber + 1 
-  
-         updateNumProductCard({id:el.id , num: currentNumber+1 , price:el.price} )
-    
-     
+        let currentNumber  = parseInt(button.textContent) 
+        button.textContent =  currentNumber + 1 
+        updateNumProductCard({id:el.id , num: currentNumber+1 , price:el.price} )
+        
     } 
       function Reduce(el){
       let button = document.querySelector(`#numProduct${el.id+el.price}` )
@@ -108,7 +105,7 @@ export default function Basket() {
     <h1 className={`${masssageNotData}`}>There are no products in the cart. Please add products</h1>
     </div>}
     {dataAllBasket.length > 0 ? <button onClick={delateAllProducts} className={`${delateall}`}>Delate All</button> : ''}
-    {dataAllBasket.length > 0 ?     <div>
+    {dataAllBasket.length > 0 ? <div>
       <TotalPrice />
     </div> : ''}
 

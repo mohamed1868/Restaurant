@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { motion } from 'motion/react'
 import { fadein } from '../../Test'
+import { instanceAxios } from '../../Api/Api'
 
 
 const {ContainerProducts} = style
@@ -19,7 +20,7 @@ export default function Products() {
 
     async function getDataProducts() {
         try{
-             let api = await axios.get(`http://localhost:5005/FoodItems?categoryName=${Params.Categories}`)
+             let api = await instanceAxios.get(`FoodItems?categoryName=${Params.Categories}`)
              setDataProduct(api.data)
              
         }catch(err){

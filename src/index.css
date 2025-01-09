@@ -44,3 +44,7 @@ a{
     background-color: transparent !important;
     box-shadow: none;
   }
+.swal2-popup{
+  background-color: var(--backgroundContainer) !important;
+  color: var(--colorText) !important;
+}

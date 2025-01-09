@@ -1,18 +1,18 @@
-
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
 import Header from './Component/Header/Header'
 import Footer from './Component/Footer/Footer'
-import Home from './Component/Home/Home'
-import Product from './Component/Product/Product'
-import Search from './Component/Search/Search'
-import Basket from './Component/Card/Basket'
-import Register from './Component/Register/Register'
-import Login from './Component/Login/Login'
 import { useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
 import Products from './Component/Products/Products'
 import Contact from './Component/Contact/Contact'
+import { lazy } from 'react'
+
+const Home =  lazy(()=> import('./Component/Home/Home'))
+const Product = lazy(()=> import('./Component/Product/Product'))
+const Search = lazy(()=> import('./Component/Search/Search'))
+const Basket = lazy(()=> import('./Component/Card/Basket'))
+const Register = lazy(()=> import('./Component/Register/Register'))
+const Login = lazy(()=> import('./Component/Login/Login'))
 
 
 
@@ -25,15 +25,18 @@ function App() {
    let jwt =  window.localStorage.userToken
     setUserToken( jwtDecode(jwt))
   }
+ 
+  function logOut(){
+    window.localStorage.removeItem('userToken')
+    setUserToken(null) 
+  } 
+
   useState(()=>{ 
     if(localStorage.userToken){
       getToken()
     }
   } ,[])
-  function logOut(){
-    window.localStorage.removeItem('userToken')
-    setUserToken(null) 
-  }
+
    
   return (
     <>

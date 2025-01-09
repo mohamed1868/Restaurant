@@ -9,6 +9,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'motion/react';
 import { fadein } from '../../Test';
+import { instanceAxiosAuthorization } from '../../Api/Api';
 
 const {containerRegister,formRegister ,ContainerLogin} = style
 
@@ -37,7 +38,7 @@ export default function Login(propss) {
         
     } else {
         try{
-        let x =  await axios.post('http://hawas.runasp.net/api/v1/Login' , Data)
+        let x =  await instanceAxiosAuthorization.post('Login' , Data)
          navigate("/Home")
          window.localStorage.userToken= x.data.jwt
          propss.callJwt()

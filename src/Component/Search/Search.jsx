@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import style from './Search.module.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { instanceAxios } from '../../Api/Api'
  
 const {containerSearch , inputSearch , contaiberSearchProduct ,massageNoData } = style
 
@@ -17,11 +18,11 @@ export default function Search() {
 
   async function getProductsAllData() {
     try{
-      let getApi3 = await axios.get('http://localhost:5005/FoodItems')
+      
+      let getApi3 = await instanceAxios.get('FoodItems')
       setdataAllProudecs(getApi3.data)
 
-
-     }catch(errer){
+     }catch(error){
 
     setErrorDataAllProudecs('No Data Found')
   }

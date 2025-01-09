@@ -8,6 +8,7 @@ import axios from 'axios';
 import Joi from 'joi';
 import { motion } from 'motion/react';
 import { fadein } from '../../Test';
+import { instanceAxiosAuthorization } from '../../Api/Api';
 
 const {containerRegister,formRegister} = style
 
@@ -38,7 +39,7 @@ export default function Register() {
         
     } else {
         try{
-         await axios.post('http://hawas.runasp.net/api/v1/Register' , Data)
+         await instanceAxiosAuthorization.post('Register' , Data)
          navigate("/Login")
          setloding(false)
         }catch(error){

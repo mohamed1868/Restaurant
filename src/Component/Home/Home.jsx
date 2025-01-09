@@ -10,6 +10,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { fadein } from '../../Test';
+import { instanceAxios } from '../../Api/Api';
 
 
 const {SliderContainer ,mySwiper ,gategoteContainer ,gategoteName ,h1Gategory ,allProducts ,productsContainer} = style
@@ -24,7 +25,7 @@ export default function Home() {
 
  async  function getData(nameApi , setData){
     try{
-        let getApi = await axios.get(`http://localhost:5005/${nameApi}`)
+        let getApi = await instanceAxios.get(`${nameApi}`)
         setData(getApi.data)
   
     }catch(errer){
