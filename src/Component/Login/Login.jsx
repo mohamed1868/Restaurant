@@ -5,7 +5,6 @@ import React, { useState } from 'react'
 import style from './Login.module.css'
 import myImage from './iv6yNy7oBqQ.png';
 import Joi from 'joi'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'motion/react';
 import { fadein } from '../../Test';

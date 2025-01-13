@@ -1,20 +1,10 @@
-import { Route, Routes } from 'react-router-dom'
-import Header from './Component/Header/Header'
-import Footer from './Component/Footer/Footer'
-import { useState } from 'react'
 import { jwtDecode } from 'jwt-decode'
-import Products from './Component/Products/Products'
-import Contact from './Component/Contact/Contact'
-import { lazy } from 'react'
-
-const Home =  lazy(()=> import('./Component/Home/Home'))
-const Product = lazy(()=> import('./Component/Product/Product'))
-const Search = lazy(()=> import('./Component/Search/Search'))
-const Basket = lazy(()=> import('./Component/Card/Basket'))
-const Register = lazy(()=> import('./Component/Register/Register'))
-const Login = lazy(()=> import('./Component/Login/Login'))
-
-
+import {  useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Footer from './Component/Footer/Footer'
+import Header from './Component/Header/Header'
+import SITEMAP from './core/Confirm'
+import Lazy from './core/Lazypadg'
 
 
 function App() {
@@ -37,25 +27,26 @@ function App() {
     }
   } ,[])
 
-   
   return (
     <>
        <Header DataToken={userToken} LogOut={logOut} />
+
        <Routes >
-        <Route path='/' element={<Home />} ></Route>
-        <Route path='Register' element={<Register />}></Route>
-        <Route path='/Login' element={<Login callJwt={getToken} />}></Route>
-        <Route path='Home' element={<Home />} ></Route>
-        <Route path='Search' element={<Search />} ></Route>
-        <Route path='Card' element={<Basket />}></Route>
-        <Route path='Contact' element={<Contact />}></Route>
-        <Route path='Product' element={<Product/>}>
-           <Route path=':id' element={<Product />} />
+        <Route path={SITEMAP.first.path}  element={<Lazy.puplic.Home />} ></Route>
+        <Route path={SITEMAP.register.path}  element={<Lazy.auth.register />}></Route>
+        <Route path={SITEMAP.login.path}  element={<Lazy.auth.loding callJwt={getToken} />}></Route>
+        <Route path={SITEMAP.homePadg.path}  element={<Lazy.puplic.Home />} ></Route>
+        <Route path={SITEMAP.search.path}  element={<Lazy.puplic.Search />} ></Route>
+        <Route path={SITEMAP.card.path}  element={<Lazy.puplic.Basket />}></Route>
+        <Route path={SITEMAP.contact.path}  element={<Lazy.puplic.Contact />}></Route>
+        <Route path={SITEMAP.product.path }  element={<Lazy.puplic.Product />}>
+           <Route path=':id' element={<Lazy.puplic.Product />} />
         </Route>
-        <Route path='Products' element={<Products />}>
-        <Route path=':Categories' element={<Products/>} />
+        <Route path={SITEMAP.products.path}  element={<Lazy.puplic.Products />}>
+        <Route path=':Categories' element={<Lazy.puplic.Products/>} />
         </Route>
        </Routes>
+
        <Footer />
     </>
   )
