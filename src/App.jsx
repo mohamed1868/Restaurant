@@ -1,55 +1,42 @@
-import { jwtDecode } from 'jwt-decode'
-import {  useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Footer from './Component/Footer/Footer'
+// eslint-disable-next-line no-unused-vars
+import React, { Suspense, useEffect, useState } from 'react'
 import Header from './Component/Header/Header'
-import SITEMAP from './core/Confirm'
-import Lazy from './core/Lazypadg'
+import Footer from './Component/Footer/Footer'
 
+import { Navigate, Outlet } from 'react-router-dom'
+import { jwtDecode } from 'jwt-decode'
 
-function App() {
+export default function App() {
+    let [Jwt , setJwt] = useState(null)
 
-  let [userToken , setUserToken] = useState(null)
- 
-  function getToken(){
-   let jwt =  window.localStorage.userToken
-    setUserToken( jwtDecode(jwt))
-  }
- 
-  function logOut(){
-    window.localStorage.removeItem('userToken')
-    setUserToken(null) 
-  } 
-
-  useState(()=>{ 
-    if(localStorage.userToken){
-      getToken()
+    function getJwt (){
+        setJwt(jwtDecode(localStorage.userToken) )
     }
-  } ,[])
+    useEffect(()=>{
+        if(localStorage.userToken){
+            getJwt()
+        }
+     },[])
 
-  return (
-    <>
-       <Header DataToken={userToken} LogOut={logOut} />
+     function LogOut(){
+        <Navigate to={'/Home'} />
+        localStorage.removeItem('userToken')
+        setJwt(null)
+     }
 
-       <Routes >
-        <Route path={SITEMAP.first.path}  element={<Lazy.puplic.Home />} ></Route>
-        <Route path={SITEMAP.register.path}  element={<Lazy.auth.register />}></Route>
-        <Route path={SITEMAP.login.path}  element={<Lazy.auth.loding callJwt={getToken} />}></Route>
-        <Route path={SITEMAP.homePadg.path}  element={<Lazy.puplic.Home />} ></Route>
-        <Route path={SITEMAP.search.path}  element={<Lazy.puplic.Search />} ></Route>
-        <Route path={SITEMAP.card.path}  element={<Lazy.puplic.Basket />}></Route>
-        <Route path={SITEMAP.contact.path}  element={<Lazy.puplic.Contact />}></Route>
-        <Route path={SITEMAP.product.path }  element={<Lazy.puplic.Product />}>
-           <Route path=':id' element={<Lazy.puplic.Product />} />
-        </Route>
-        <Route path={SITEMAP.products.path}  element={<Lazy.puplic.Products />}>
-        <Route path=':Categories' element={<Lazy.puplic.Products/>} />
-        </Route>
-       </Routes>
+  return (<>
+  < Header hidden ={Jwt} LogOut ={LogOut}  />
 
-       <Footer />
-    </>
+   <Suspense fallback={<div className='vh-100 d-flex align-items-center justify-content-center'>
+                              <li className='fa fa-spinner fa-spin  fa-3x'></li>
+                          </div>}>
+        <Outlet context={{ getJwt }} />
+   </Suspense>
+
+  <Footer />
+  
+  </>
+    
+    
   )
 }
-
-export default App

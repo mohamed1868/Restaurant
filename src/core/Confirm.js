@@ -3,43 +3,43 @@
 const SITEMAP = {
   first : {
     path : '/',
-    labal : 'Home'
+    label : 'Home'
   },
   homePadg : {
     path : 'Home',
-    labal : 'Home'
+    label : 'Home'
   },
   card : {
     path : 'Card',
-    labal : 'Card'
+    label : 'Card'
   },
   contact : {
     path : 'Contact',
-    labal : 'contact'
+    label : 'contact'
   },
   login : {
     path : 'Login',
-    labal : 'Login'
+    label : 'Login'
   },
   Register : {
     path : 'Register',
-    labal : 'Register'
+    label : 'Register'
   },
   product : {
     path : 'Product',
-    labal : 'Product'
+    label : 'Product'
   },
   products : {
     path : 'Products',
-    labal : 'Products'
+    label : 'Products'
   },
   register : {
     path : 'Register',
-    labal : 'Register'
+    label : 'Register'
   },
   search : {
     path : 'Search',
-    labal : 'Search'
+    label : 'Search'
   },
 } 
 

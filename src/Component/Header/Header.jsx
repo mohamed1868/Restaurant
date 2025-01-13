@@ -55,7 +55,7 @@ export default function Header(propss) {
         <li className="nav-item">
           <Link to={'Register'} className="nav-link " aria-current="page">Sign Up</Link>
         </li>
-        {propss.DataToken?<li className="nav-item">
+        {propss.hidden?<li className="nav-item">
           <button className="nav-link " aria-current="page" onClick={()=>propss.LogOut()}>Logout</button>
         </li> : <li className="nav-item">
           <Link to={'Login'} className="nav-link " aria-current="page">Sign In</Link>

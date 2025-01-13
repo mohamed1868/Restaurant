@@ -5,15 +5,16 @@ import React, { useState } from 'react'
 import style from './Login.module.css'
 import myImage from './iv6yNy7oBqQ.png';
 import Joi from 'joi'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useOutletContext } from 'react-router-dom'
 import { motion } from 'motion/react';
 import { fadein } from '../../Test';
 import { instanceAxiosAuthorization } from '../../Api/Api';
 
 const {containerRegister,formRegister ,ContainerLogin} = style
 
-export default function Login(propss) {
-    let navigate = useNavigate()
+export default function Login() {
+    const { getJwt } = useOutletContext();
+    const navigate = useNavigate()
     let [error ,seterror] = useState('')
     let [joiget , setjoi] =useState([])
     let [loding , setloding] =useState(false)
@@ -40,7 +41,7 @@ export default function Login(propss) {
         let x =  await instanceAxiosAuthorization.post('Login' , Data)
          navigate("/Home")
          window.localStorage.userToken= x.data.jwt
-         propss.callJwt()
+         getJwt()
          setloding(false)
         }catch(error){
             setloding(false)
