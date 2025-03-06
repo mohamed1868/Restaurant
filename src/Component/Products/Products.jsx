@@ -7,6 +7,7 @@ import axios from 'axios'
 import { motion } from 'motion/react'
 import { fadein } from '../../Test'
 import { instanceAxios } from '../../Api/Api'
+import { Data } from '../../Data'
 
 
 const {ContainerProducts} = style
@@ -18,17 +19,18 @@ export default function Products() {
     let [errorMassage , setErrorMassage] = useState('')
    console.log(Params.Categories)
 
-    async function getDataProducts() {
-        try{
-             let api = await instanceAxios.get(`FoodItems?categoryName=${Params.Categories}`)
-             setDataProduct(api.data)
+    // async function getDataProducts() {
+    //     try{
+    //          let api = await instanceAxios.get(`FoodItems?categoryName=${Params.Categories}`)
+    //          setDataProduct(api.data)
              
-        }catch(err){
-            setErrorMassage('No Date Found')
-        }
-    }
+    //     }catch(err){
+    //         setErrorMassage('No Date Found')
+    //     }
+    // }
     useState(()=>[
-        getDataProducts()
+        // getDataProducts(),
+        setDataProduct(Data.FoodItems.filter((el)=>el.categoryName == Params.Categories))
     ],{})
    
     

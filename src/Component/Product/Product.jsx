@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 import { fadein } from '../../Test';
 import { motion } from 'motion/react';
 import { instanceAxios } from '../../Api/Api';
+import { Data } from '../../Data';
 
 const {collectContainerProduct,sizeProdict,  mySwiper , containerOneProduct ,sizeProduct , buttomProduct ,containerNumProduct ,oneNum ,activeSize} = style
 
@@ -28,16 +29,16 @@ export default function Product() {
   
 
 
-  async function getDataProduct() {
-    try{
-        let api5 = await instanceAxios.get(`FoodItems?id=${parseInt(Params1.id) }`)
-        setDataProduct1(api5.data)
+  // async function getDataProduct() {
+  //   try{
+  //       let api5 = await instanceAxios.get(`FoodItems?id=${parseInt(Params1.id) }`)
+  //       setDataProduct1(api5.data)
 
-    }catch(error){
-      setErrorDataProduct('NOT DATA FOUND')
-    }
+  //   }catch(error){
+  //     setErrorDataProduct('NOT DATA FOUND')
+  //   }
     
-  }
+  // }
 
   function addSizeProduct(size){
     setSizeProduct1(size)
@@ -75,7 +76,8 @@ function addToCard(allData){
 }
 
   useEffect(()=>{
-    getDataProduct()
+    // getDataProduct()
+    setDataProduct1([Data.FoodItems.find((el)=>el.id ==Params1.id)] )
   },[])
 
   return (<>

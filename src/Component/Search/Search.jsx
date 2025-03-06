@@ -5,6 +5,7 @@ import style from './Search.module.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { instanceAxios } from '../../Api/Api'
+import { Data } from '../../Data'
  
 const {containerSearch , inputSearch , contaiberSearchProduct ,massageNoData } = style
 
@@ -16,25 +17,25 @@ export default function Search() {
     let [massageNoValue , setMassageNoValue] = useState('Please enter the name of the product you are looking for')
 
 
-  async function getProductsAllData() {
-    try{
+  // async function getProductsAllData() {
+  //   try{
       
-      let getApi3 = await instanceAxios.get('FoodItems')
-      setdataAllProudecs(getApi3.data)
+  //     let getApi3 = await instanceAxios.get('FoodItems')
+  //     setdataAllProudecs(getApi3.data)
 
-     }catch(error){
+  //    }catch(error){
 
-    setErrorDataAllProudecs('No Data Found')
-  }
+  //   setErrorDataAllProudecs('No Data Found')
+  // }
     
-  }
+  // }
   function inputValue(el){
     setData(el.target.value.toUpperCase())
   }
 
     useEffect(()=>{
-
-      getProductsAllData()
+      setdataAllProudecs(Data.FoodItems)
+      // getProductsAllData()
     },[])
 
   return (<>

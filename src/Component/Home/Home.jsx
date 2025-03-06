@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { fadein } from '../../Test';
 import { instanceAxios } from '../../Api/Api';
+import {Data} from '../../Data'
 
 
 const {SliderContainer ,mySwiper ,gategoteContainer ,gategoteName ,h1Gategory ,allProducts ,productsContainer} = style
@@ -23,21 +24,26 @@ export default function Home() {
   let [dataAllProudecs , setDataAllProduct] = useState([])
 
 
- async  function getData(nameApi , setData){
-    try{
-        let getApi = await instanceAxios.get(`${nameApi}`)
-        setData(getApi.data)
+//  async  function getData(nameApi , setData){
+//     try{
+//         let getApi = await instanceAxios.get(`${nameApi}`)
+//         setData(getApi.data)
   
-    }catch(errer){
-      errorSetDataCategory('No Data Found')
-    }
-  }
+//     }catch(errer){
+//       errorSetDataCategory('No Data Found')
+//     }
+//   }
 
 
   useEffect(()=>{
-    getData('images' , setImageSlider)
-    getData('categories' , setDataCategory)
-    getData('FoodItems' , setDataAllProduct)
+    // getData('images' , setImageSlider)
+    // getData('categories' , setDataCategory)
+    // getData('FoodItems' , setDataAllProduct)
+    setImageSlider(Data.images)
+    setDataCategory(Data.categories)
+    setDataAllProduct(Data.FoodItems)
+
+    
 
   },[])
 
